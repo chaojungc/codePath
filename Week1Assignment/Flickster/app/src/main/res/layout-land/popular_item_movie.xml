@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@mipmap/ic_launcher"
+        android:id="@+id/ivMovieImage" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_play_circle_outline_black_24dp"
+        android:id="@+id/imageView"
+        tools:ignore="VectorDrawableCompat"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="145dp"/>
+
+    <TextView
+        tools:text="Split"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ivMovieImage"
+        android:layout_toEndOf="@+id/ivMovieImage"
+        android:id="@+id/tvTitle"
+        android:textSize="22sp"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        tools:text="A teenager finds himself transported to an island where he must help protect a group of orphans with special powers from creatures intent on destroying them."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvOverview"
+        android:layout_below="@+id/tvTitle"
+        android:layout_toRightOf="@+id/ivMovieImage"
+        android:layout_toEndOf="@+id/ivMovieImage"
+        android:textSize="12sp" />
+
+    <!--<com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtubeplayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>-->
+
+</RelativeLayout>
