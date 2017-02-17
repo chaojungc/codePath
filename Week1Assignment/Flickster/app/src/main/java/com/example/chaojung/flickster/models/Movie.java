@@ -32,11 +32,6 @@ public class Movie {
 
     public String getId() { return id; }
 
-    public String getTrailerURL(String id){
-
-        String trailerURL = "https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
-        return trailerURL;
-    }
 
     String posterPath;
     String backdropPath;

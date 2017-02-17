@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/ChaoJung/git/Flickster/app/build/intermediates/res/merged/debug/layout-land/item_movie.xml",
+        "source": "/Users/ChaoJung/git/Flickster/app/src/main/res/layout-land/item_movie.xml"
+    },
+    {
+        "merged": "/Users/ChaoJung/git/Flickster/app/build/intermediates/res/merged/debug/layout-land/popular_item_movie.xml",
+        "source": "/Users/ChaoJung/git/Flickster/app/src/main/res/layout-land/popular_item_movie.xml"
+    }
+]

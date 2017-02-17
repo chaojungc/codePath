@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.0_cea5bd6034e95fab2cbfa340a6441d96c9b22094.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.0_ac2a0d26ab3db5bd4a7a528ce9408e6c246675d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9d347cc1560e060cb3907f7079e1009e1977c959">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/instant-run_53144852e35ebdf797d4b491dc3924500d55a149.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.0_da8636e2e30df64c69b8021f33f9f97890312aa9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_5e6369bc29c36202fe1ad417dc22980a5a29fdc7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.0_d378398b8906368d988b7f09bd53be5b79466422.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.0_5b77fcb1893ee99f86d8a52f49ebe3628647c025.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/jp.wasabeef/picasso-transformations/2.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3fb1fe781490fcf9fa47ee2c268279f777266a6a">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/jp.wasabeef-picasso-transformations-2.1.0_ae811b58258e18de9312eb7bb39b54293a382326.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.0_c5d70b9e732f93fb46268982f4b0e27f56a79a33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.9_9ccbb01094164344a858d7fe7221af472adf5683.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.0_59b99f55cc702225b4bc107bdb88e65d61d644ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.0_0822320dfaad46b3c1b0891162f46485b69dc604.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.0_97261c7b492e88ac99a48a12e53b06d1521a195e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d690f0d597cfe245b751d4f9c7de63bf5e453412">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_8c32d713f662fc5d8fce0d39cad3369cc67314a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="78b8f6e37921559ed21c1fae1f30f9f713494db8">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi_c6e09c2776dc6445031177b9e311b4ebe6db9b8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/httpclient-4.3.6_0f2294abd8079b5b174314350ebd9bf48ff15319.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Users/ChaoJung/git/Flickster/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.0_1c22a401ac9eb05938bbf441fb568554d657d3d7.jar" />
+    </item>
+
+</items>

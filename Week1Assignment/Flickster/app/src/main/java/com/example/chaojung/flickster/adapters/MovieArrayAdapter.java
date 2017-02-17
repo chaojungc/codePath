@@ -1,6 +1,7 @@
 package com.example.chaojung.flickster.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chaojung.flickster.R;
+import com.example.chaojung.flickster.YoutubeActivity;
 import com.example.chaojung.flickster.models.Movie;
 import com.squareup.picasso.Picasso;
 
@@ -58,7 +60,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Movie movie = getItem(position);
+        final Movie movie = getItem(position);
         ViewHolder viewHolder;
         int type = getItemViewType(position);
         int orientation = getContext().getResources().getConfiguration().orientation;
@@ -123,7 +125,10 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
             viewHolder.ivImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), "youtube",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getContext(), YoutubeActivity.class);
+                    i.putExtra("movieID", movie.getId());
+                    // brings up the second activity
+                    getContext().startActivity(i);
                     //gotoYoutubeActivity(position); //前往某個Activity(自行修改成要觸發的行為)
                 }
             });
