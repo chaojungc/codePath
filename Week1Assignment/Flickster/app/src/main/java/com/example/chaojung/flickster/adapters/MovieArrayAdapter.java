@@ -4,14 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.chaojung.flickster.DetailActivity;
 import com.example.chaojung.flickster.R;
 import com.example.chaojung.flickster.YoutubeActivity;
 import com.example.chaojung.flickster.models.Movie;
@@ -19,9 +20,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
-
-import static com.example.chaojung.flickster.R.id.tvOverview;
 
 /**
  * Created by ChaoJung on 2017/2/14.
@@ -30,10 +31,16 @@ import static com.example.chaojung.flickster.R.id.tvOverview;
 public class MovieArrayAdapter extends ArrayAdapter<Movie> {
 
     // View lookup cache
-    private static class ViewHolder {
-        ImageView ivImage;
-        TextView tvTitle;
-        TextView tvOverview;
+    static class ViewHolder {
+
+        @BindView(R.id.ivMovieImage) ImageView ivImage;
+        @Nullable @BindView(R.id.tvTitle) TextView tvTitle;
+        @Nullable @BindView(R.id.tvOverview) TextView tvOverview;
+
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+
     }
 
     public MovieArrayAdapter(Context context, List<Movie> movies) {
@@ -78,11 +85,11 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
 
             }
 
-            viewHolder = new ViewHolder();
+            viewHolder = new ViewHolder(convertView);
 
-            viewHolder.ivImage = (ImageView) convertView.findViewById(R.id.ivMovieImage);
+            /*viewHolder.ivImage = (ImageView) convertView.findViewById(R.id.ivMovieImage);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
-            viewHolder.tvOverview = (TextView) convertView.findViewById(tvOverview);
+            viewHolder.tvOverview = (TextView) convertView.findViewById(tvOverview);*/
 
             // Cache the viewHolder object inside the fresh view
             convertView.setTag(viewHolder);
@@ -93,6 +100,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
         }
 
         viewHolder.ivImage.setImageResource(0);
+        final String trailerUrl = "https://api.themoviedb.org/3/movie/"+movie.getId()+"/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
         if (type == 0) { //not that popular movie
 
@@ -106,8 +114,14 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), "detailPage",Toast.LENGTH_SHORT).show();
-                    //gotoDetailActivity(position); //前往某個Activity(自行修改成要觸發的行為)
+                    Intent i = new Intent(getContext(), DetailActivity.class);
+                    i.putExtra("trailerUrl", trailerUrl);
+                    i.putExtra("originalTitle", movie.getOriginalTitle());
+                    i.putExtra("overview", movie.getOverview());
+                    i.putExtra("releaseDate", movie.getReleaseDate());
+                    i.putExtra("voteAverage", movie.getVoteAverage());
+                    // brings up the second activity
+                    getContext().startActivity(i);
                 }
             });
 
@@ -126,7 +140,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(getContext(), YoutubeActivity.class);
-                    i.putExtra("movieID", movie.getId());
+                    i.putExtra("trailerUrl", trailerUrl);
                     // brings up the second activity
                     getContext().startActivity(i);
                     //gotoYoutubeActivity(position); //前往某個Activity(自行修改成要觸發的行為)

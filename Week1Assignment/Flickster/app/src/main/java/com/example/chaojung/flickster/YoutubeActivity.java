@@ -16,22 +16,24 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 public class YoutubeActivity extends YouTubeBaseActivity {
 
     ArrayList<Trailer> trailers;
     String trailerKey;
+    @BindView(R.id.youtubePlayer) YouTubePlayerView youTubePlayerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube);
+        ButterKnife.bind(this);
 
         trailers = new ArrayList<>();
-
-        String movieID = getIntent().getStringExtra("movieID");
-        String trailerUrl = "https://api.themoviedb.org/3/movie/"+movieID+"/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+        String trailerUrl = getIntent().getStringExtra("trailerUrl");
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(trailerUrl, new JsonHttpResponseHandler(){
@@ -44,16 +46,15 @@ public class YoutubeActivity extends YouTubeBaseActivity {
                     trailers.addAll(Trailer.transJSONArray(trailerJsonResult));
                     trailerKey = trailers.get(0).getKey();
 
-                    YouTubePlayerView youTubePlayerView =
-                            (YouTubePlayerView) findViewById(R.id.youtubePlayer);
-
                     youTubePlayerView.initialize("AIzaSyAHQwbBgUDBqiTJxq_5N0qjlaLI9YjuprA",
                             new YouTubePlayer.OnInitializedListener() {
+
                                 @Override
                                 public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                                                     YouTubePlayer youTubePlayer, boolean b) {
 
                                     // do any work here to cue video, play video, etc.
+                                    youTubePlayer.setFullscreen(true);
                                     youTubePlayer.loadVideo(trailerKey);
                                 }
                                 @Override

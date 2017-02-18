@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:3:5-45
 		INJECTED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:7:5-25:19
+ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:7:5-23:19
 MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/AndroidManifest.xml:25:5-20
@@ -53,11 +53,13 @@ ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:17:17-
 	android:name
 		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:17:27-74
 activity#com.example.chaojung.flickster.YoutubeActivity
-ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:20:9-23:20
-	android:screenOrientation
-		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:21:13-50
+ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:20:9-21:56
 	android:name
-		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:20:19-50
+		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:21:13-44
+activity#com.example.chaojung.flickster.DetailActivity
+ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:22:9-61
+	android:name
+		ADDED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml:22:19-49
 uses-sdk
 INJECTED from /Users/ChaoJung/git/Flickster/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/AndroidManifest.xml:21:5-23:78
@@ -70,6 +72,7 @@ MERGED from [com.android.support:animated-vector-drawable:25.1.0] /Users/ChaoJun
 MERGED from [com.android.support:support-vector-drawable:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:support-compat:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/AndroidManifest.xml:21:5-23:58
 MERGED from [jp.wasabeef:picasso-transformations:2.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/jp.wasabeef/picasso-transformations/2.1.0/AndroidManifest.xml:8:5-10:41
+MERGED from [com.jakewharton:butterknife:8.4.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/AndroidManifest.xml:5:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:25.1.0] /Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion

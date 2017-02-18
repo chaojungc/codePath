@@ -5,19 +5,19 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="5599141750029"
+    timestamp="10064292141520"
     token="-7490279703751020687"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="2624" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1081" />
+        duration="0" />
     <task
         name="verifier"
         duration="0" />
@@ -27,7 +27,7 @@
         type="MAIN" />
 
     <build
-        timestamp="5599141750029"
+        timestamp="17237601187288"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/ChaoJung/git/Flickster/app/build/outputs/apk/app-debug.apk"

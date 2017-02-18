@@ -24,10 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.chaojung.flickster.YoutubeActivity"
-            android:screenOrientation="landscape" >
-        </activity>
+        <activity android:name="com.example.chaojung.flickster.YoutubeActivity" />
+        <activity android:name="com.example.chaojung.flickster.DetailActivity" />
     </application>
 
 </manifest>

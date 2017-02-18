@@ -17,10 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".YoutubeActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
-
+        <activity
+            android:name=".YoutubeActivity"></activity>
+        <activity android:name=".DetailActivity"></activity>
     </application>
+
 </manifest>

@@ -52,6 +52,10 @@
         "source": "/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
+        "merged": "/Users/ChaoJung/git/Flickster/app/build/intermediates/res/merged/debug/layout/activity_detail.xml",
+        "source": "/Users/ChaoJung/git/Flickster/app/src/main/res/layout/activity_detail.xml"
+    },
+    {
         "merged": "/Users/ChaoJung/git/Flickster/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/ChaoJung/git/Flickster/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_activity_chooser_view_list_item.xml"
     },

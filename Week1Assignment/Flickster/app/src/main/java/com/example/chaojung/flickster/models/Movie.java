@@ -32,6 +32,10 @@ public class Movie {
 
     public String getId() { return id; }
 
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
 
     String posterPath;
     String backdropPath;
@@ -39,6 +43,7 @@ public class Movie {
     String overview;
     String voteAverage;
     String id;
+    String releaseDate;
 
     public Movie(JSONObject jsonObject) throws JSONException {
 
@@ -48,6 +53,7 @@ public class Movie {
         this.overview = jsonObject.getString("overview");
         this.voteAverage = jsonObject.getString("vote_average");
         this.id = jsonObject.getString("id");
+        this.releaseDate = jsonObject.getString("release_date");
     }
 
     public static ArrayList<Movie> transJSONArray(JSONArray array) throws JSONException {

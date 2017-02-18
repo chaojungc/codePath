@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/ivMovieImage"
         android:layout_toEndOf="@+id/ivMovieImage"
+        android:layout_marginTop="30dp"
         android:id="@+id/tvTitle"
         android:textSize="22sp"
         android:layout_alignParentTop="true" />
@@ -37,6 +38,8 @@
         android:layout_below="@+id/tvTitle"
         android:layout_toRightOf="@+id/ivMovieImage"
         android:layout_toEndOf="@+id/ivMovieImage"
+        android:ellipsize="end"
+        android:maxLines="5"
         android:textSize="12sp" />
 
     <!--<com.google.android.youtube.player.YouTubePlayerView
