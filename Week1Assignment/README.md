@@ -38,8 +38,9 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<img src='http://i.imgur.com/8jkTtn4.gif' title='Video Walkthrough (Portrait)' width='' alt='Video Walkthrough' />
-<img src='http://i.imgur.com/2gQujTU.gif' title='Video Walkthrough (Landscape)' width='' alt='Video Walkthrough((Landscape)' />
+
+<img src='http://i.imgur.com/8jkTtn4.gif' title='Video Walkthrough (Portrait)' width='100px' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/2gQujTU.gif' title='Video Walkthrough (Landscape)' width='200px' alt='Video Walkthrough((Landscape)' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
