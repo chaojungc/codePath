@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_name"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_gravity="center" android:orientation="vertical"
+    android:paddingLeft="20dp" android:paddingRight="20dp"
+    android:paddingBottom="20dp" android:paddingTop="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+            <TextView
+                android:text="Begin Date"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/textView"
+                android:layout_alignBaseline="@id/textView"
+                android:inputType="date"
+                android:id="@+id/etBeginDate"
+                android:hint="1901/01/01"
+                android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:text="Sort Order"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="16sp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textView2"
+            android:entries="@array/sort_array"
+            android:id="@+id/spinSortOrder" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="News Desk Value"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textSize="16sp"/>
+
+        <CheckBox
+            android:text="Arts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textView3"
+            android:id="@+id/cbArt" />
+
+        <CheckBox
+            android:text="Fashion and Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textView3"
+            android:layout_below="@id/cbArt"
+            android:id="@+id/cbFashion" />
+
+        <CheckBox
+            android:text="Sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textView3"
+            android:layout_below="@id/cbFashion"
+            android:id="@+id/cbSport" />
+    </RelativeLayout>
+
+    <Button
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnSave" />
+
+</LinearLayout>

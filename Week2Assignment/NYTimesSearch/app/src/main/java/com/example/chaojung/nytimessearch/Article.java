@@ -1,6 +1,9 @@
 package com.example.chaojung.nytimessearch;
 
-import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by ChaoJung on 2017/2/20.
@@ -8,39 +11,52 @@ import java.util.ArrayList;
 
 public class Article {
 
-    String webUrl;
-    String headline;
-    String thumbNail;
+    @SerializedName("response")
+    @Expose
+    private Response response;
 
-    private String mName;
-    private boolean mOnline;
+    @SerializedName("copyright")
+    @Expose
+    private String copyright;
 
-    public Article(String name, boolean online) {
-        mName = name;
-        mOnline = online;
+    public Response getResponse() {
+        return response;
     }
 
-    public String getName() {
-        return mName;
+    public void setResponse(Response response) {
+        this.response = response;
     }
 
-    public boolean isOnline() {
-        return mOnline;
+    public String getCopyright() {
+        return copyright;
     }
 
-    private static int lastContactId = 0;
-
-    public static ArrayList<Article> createContactsList(int numContacts) {
-        ArrayList<Article> contacts = new ArrayList<Article>();
-
-        for (int i = 1; i <= numContacts; i++) {
-            contacts.add(new Article("Person " + ++lastContactId, i <= numContacts / 2));
-        }
-
-        return contacts;
+    public void setCopyright(String copyright) {
+        this.copyright = copyright;
     }
 
+    public Article() {
+        copyright = "";
+        response = new Response();
+    }
 
-
+    public static Article parseJSON(String response) {
+        Gson gson = new GsonBuilder().create();
+        Article article = gson.fromJson(response, Article.class);
+        return article;
+    }
 
 }
+  /* public Article(JSONObject jsonObject) throws JSONException {
+        this.webUrl = jsonObject.getString("web_url");
+        this.headline = jsonObject.getJSONObject("headline").getString("main");
+
+        JSONArray multimedia = jsonObject.getJSONArray("multimedia");
+        if(multimedia.length() > 0){
+            JSONObject multimediaJSON = multimedia.getJSONObject(0);
+            this.thumbNail = "https://www.nytimes.com/" + multimediaJSON.getString("url");
+        }
+        else{
+            this.thumbNail = "";
+        }
+    }*/

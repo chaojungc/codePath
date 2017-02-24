@@ -2,11 +2,14 @@ package com.example.chaojung.nytimessearch;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -38,12 +41,13 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
     }
 
     // Store a member variable for the contacts
-    private List<Article> mArticles;
+    //private List<Doc> mArticles;
+    private List<Doc> mArticles;
     // Store the context for easy access
     private Context mContext;
 
     // Pass in the contact array into the constructor
-    public ArticlesAdapter(Context context, List<Article> articles) {
+    public ArticlesAdapter(Context context, List<Doc> articles) {
         mArticles = articles;
         mContext = context;
     }
@@ -71,13 +75,24 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        Article article = mArticles.get(position);
+        Doc article = mArticles.get(position);
 
         // Set item views based on your views and data model
         ImageView imageView = viewHolder.ivImage;
-        imageView .setImageResource(0);
+        imageView.setImageResource(0);
+
         TextView textView = viewHolder.tvTitle;
-        textView.setText(article.getName());
+        textView.setText(article.getHeadline().getMain());
+
+        if(article.getMultimedia().size() != 0){
+            Glide.with(mContext)
+                    .load(article.getMultimedia().get(0).getUrl())
+                    .placeholder(R.drawable.ic_more_horiz_black_24dp)
+                    .into(imageView);
+        }
+
+        Log.d("DEBUG",article.getWebUrl());
+        //Toast.makeText(mContext,article.getHeadline().getMain(),Toast.LENGTH_SHORT).show();
 
     }
 

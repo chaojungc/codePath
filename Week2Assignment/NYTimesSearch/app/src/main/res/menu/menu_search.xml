@@ -9,10 +9,10 @@
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView" />
     <item
-        android:id="@+id/miCompose"
+        android:id="@+id/action_filter"
         android:icon="@drawable/ic_sort_black_24dp"
         app:showAsAction="ifRoom"
-        android:title="Compose">
+        android:title="Filter">
     </item>
 
 </menu>
