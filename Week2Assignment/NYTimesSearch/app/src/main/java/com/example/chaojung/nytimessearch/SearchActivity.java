@@ -1,5 +1,6 @@
 package com.example.chaojung.nytimessearch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.MenuItemCompat;
@@ -12,9 +13,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements FilterSearchDialogFragment.FilterSearchDialogListener {
 
     ArticlesAdapter articlesAdapter;
     RecyclerView rvArticles;
@@ -36,6 +40,12 @@ public class SearchActivity extends AppCompatActivity {
     //int page = 0;
     String apiKey = "b04b71a746fa4bc5aaf6f146e9b7cff0";
     String keyword;
+
+    String filterDate = null;
+    String filterSort = null;
+    String filterNewsDesk = null;
+
+    Filter filter;
 
     private EndlessRecyclerViewScrollListener scrollListener;
 
@@ -46,6 +56,19 @@ public class SearchActivity extends AppCompatActivity {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    @Override
+    public void onFinishFilterDialog(Filter filterconfirmed) {
+        filter = filterconfirmed;
+
+        if(filter.getBeginDate() != null)
+            filterDate = filter.getBeginDate();
+        if(filter.getSortOrder() != null)
+            filterSort = filter.getSortOrder();
+        if(!filter.getNewsDesk().equals("")){
+            filterNewsDesk = "news_desk:("+filter.getNewsDesk()+")";
+        }
+    }
+
     public interface MyApiEndpointInterface {
         // Request method and URL specified in the annotation
         // Callback for the parsed response is the last parameter
@@ -54,7 +77,11 @@ public class SearchActivity extends AppCompatActivity {
         Call<Article> getArticle(
                 @Query("api-key") String apiKey,
                 @Query("page") int page,
-                @Query("q") String query);
+                @Query("q") String query,
+                @Query("begin_date") String beginDate,
+                @Query("sort") String sortOrder,
+                @Query("fq") String newsDesk
+        );
 
     }
 
@@ -71,6 +98,7 @@ public class SearchActivity extends AppCompatActivity {
 
     public void setupViews(){
 
+        filter =  new Filter();
         // Lookup the recyclerview in activity layout
         rvArticles = (RecyclerView) findViewById(R.id.rvArticles);
         // Initialize contacts
@@ -81,9 +109,24 @@ public class SearchActivity extends AppCompatActivity {
         rvArticles.setAdapter(articlesAdapter);
         // Set layout manager to position the items
         StaggeredGridLayoutManager gridLayoutManager =
-                new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
+                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         // Attach the layout manager to the recycler view
         rvArticles.setLayoutManager(gridLayoutManager);
+        rvArticles.setHasFixedSize(true);
+
+        ItemClickSupport.addTo(rvArticles).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                // do it
+                Intent i = new Intent(getApplicationContext(),ArticleActivity.class);
+                Doc doc = article.get(position);
+                //i.putExtra("url",doc.getWebUrl());
+                i.putExtra("article", Parcels.wrap(doc));
+                startActivity(i);
+
+                //Toast.makeText(SearchActivity.this,"Hello",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         scrollListener = new EndlessRecyclerViewScrollListener(gridLayoutManager) {
             @Override
@@ -97,7 +140,6 @@ public class SearchActivity extends AppCompatActivity {
         };
         // Adds the scroll listener to RecyclerView
         rvArticles.addOnScrollListener(scrollListener);
-        //Log.d("Debug",String.valueOf(page));
 
     }
 
@@ -119,7 +161,7 @@ public class SearchActivity extends AppCompatActivity {
         MyApiEndpointInterface apiService =
                 retrofit.create(MyApiEndpointInterface.class);
 
-        Call<Article> call = apiService.getArticle(apiKey,offset,keyword);
+        Call<Article> call = apiService.getArticle(apiKey,offset,keyword,filterDate,filterSort,filterNewsDesk);
 
         call.enqueue(new Callback<Article>() {
             @Override
@@ -143,7 +185,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void showFilterDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        FilterSearchDialogFragment filterSearchDialogFragment = new FilterSearchDialogFragment();
+        FilterSearchDialogFragment filterSearchDialogFragment = FilterSearchDialogFragment.newInstance(filter);
         filterSearchDialogFragment.show(fm, "fragment_filter_search");
     }
 
@@ -182,15 +224,19 @@ public class SearchActivity extends AppCompatActivity {
                 MyApiEndpointInterface apiService =
                         retrofit.create(MyApiEndpointInterface.class);
 
-                Call<Article> call = apiService.getArticle(apiKey,0,keyword);
+                Call<Article> call = apiService.getArticle(apiKey,0,keyword,filterDate,filterSort,filterNewsDesk);
 
                 call.enqueue(new Callback<Article>() {
                     @Override
                     public void onResponse(Call<Article> call, Response<Article> response) {
 
+                        article.clear();
                         Article articleResponse = response.body();
-                        article.addAll(articleResponse.getResponse().getDocs());
-                        articlesAdapter.notifyDataSetChanged();
+                        if(articleResponse != null) {
+                            article.addAll(articleResponse.getResponse().getDocs());
+                            articlesAdapter.notifyDataSetChanged();
+                        }
+                        scrollListener.resetState();
 
                         //setupViews();
                         Log.d("DEBUG",articlesAdapter.toString());

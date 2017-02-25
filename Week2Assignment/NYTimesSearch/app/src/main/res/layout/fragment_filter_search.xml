@@ -25,7 +25,7 @@
                 android:layout_alignBaseline="@id/textView"
                 android:inputType="date"
                 android:id="@+id/etBeginDate"
-                android:hint="1901/01/01"
+                android:hint="19010101"
                 android:textSize="16sp" />
 
     </RelativeLayout>

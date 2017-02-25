@@ -17,7 +17,7 @@ import java.util.List;
  * Created by ChaoJung on 2017/2/20.
  */
 
-public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHolder> {
+public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHolder>{
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
@@ -57,6 +57,7 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
         return mContext;
     }
 
+
     // Usually involves inflating a layout from XML and returning the holder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -68,8 +69,10 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
+
         return viewHolder;
     }
+
 
     // Involves populating data into the item through holder
     @Override
