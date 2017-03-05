@@ -1,5 +1,6 @@
 package com.codepath.apps.simpletweets.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,7 @@ import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity implements ComposeTweetDialogFragment.ComposeTweetDialogListener {
 
     Gson gson = new GsonBuilder().create();
 
@@ -48,6 +49,20 @@ public class DetailActivity extends AppCompatActivity {
 
     User loginUser;
     Tweet tweet;
+
+    @Override
+    public void onFinishComposeDialog(String update) {
+        client.postTweet(update, new TextHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseBody) {
+                Intent i = new Intent(getApplicationContext(),TimelineActivity.class);
+                startActivity(i);
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseBody, Throwable error) {
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

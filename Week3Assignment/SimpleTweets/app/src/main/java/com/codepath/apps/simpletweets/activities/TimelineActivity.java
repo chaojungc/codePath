@@ -120,6 +120,8 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
         rvTweets.setLayoutManager(linearLayoutManager);
         rvTweets.setHasFixedSize(true);
 
+        scrollToTop();
+
         ItemClickSupport.addTo(rvTweets).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
