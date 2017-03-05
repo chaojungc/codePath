@@ -11,15 +11,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/holo_blue_light"
     tools:context=".activities.LoginActivity" >
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_margin="20dp"
+        android:background="@drawable/image_border"
         android:onClick="loginToRest"
-        android:text="@string/login_label" />
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="@string/login_label"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/twitter"
+        android:paddingLeft="20dp" />
 
 </RelativeLayout>
 

@@ -139,7 +139,7 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
                 // Triggered only when new data needs to be appended to the list
                 // Add whatever code is needed to append new items to the bottom of the list
                 page = tweets.get(tweetsAdapter.getItemCount()-1).getUid();
-                loadNextDataFromApi(page);
+                loadNextDataFromApi(page-1);
             }
         };
         // Adds the scroll listener to RecyclerView
