@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:fitsSystemWindows="true"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            >
+
+            <ImageView
+                android:id="@+id/ivBanner"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:fitsSystemWindows="true"
+                app:srcCompat="@drawable/ic_launcher" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="#f4f2f2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rlUserHeader"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivProfileImage"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="36dp"
+                    android:text="user name"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvScreenName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tvUserName"
+                    android:layout_alignStart="@+id/tvUserName"
+                    android:layout_alignTop="@+id/tvUserName"
+                    android:layout_marginTop="17dp"
+                    android:text="screen name"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tvScreenName"
+                    android:layout_alignStart="@+id/tvScreenName"
+                    android:layout_below="@+id/tvScreenName"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="7dp"
+                    android:autoLink="all"
+                    android:lineSpacingExtra="2sp"
+                    android:linksClickable="true"
+                    android:text="Description"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvfollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tvDescription"
+                    android:layout_alignStart="@+id/tvDescription"
+                    android:layout_below="@+id/tvDescription"
+                    android:layout_marginBottom="10dp"
+                    android:text="following"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvfollower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tvfollowing"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_toEndOf="@+id/tvfollowing"
+                    android:layout_toRightOf="@+id/tvfollowing"
+                    android:text="followers"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/flContainer"
+                android:layout_width="match_parent"
+                android:layout_height="616dp">
+            </FrameLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        app:srcCompat="@drawable/ic_launcher"
+        app:layout_anchor="@id/nestScroll"
+        app:layout_anchorGravity="top|left|start"
+        app:layout_behavior="com.codepath.apps.simpletweets.utils.ScrollAwareImageBehavior"/>
+
+</android.support.design.widget.CoordinatorLayout>
+<!--<RelativeLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.codepath.apps.simpletweets.activities.ProfileActivity">-->
+
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:id="@+id/appBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
+
+    <!--&lt;!&ndash; Toolbar is the actual app bar with text and the action items &ndash;&gt;-->
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@android:color/holo_blue_light"-->
+        <!--app:titleTextColor="@android:color/white"-->
+        <!--app:layout_scrollFlags="scroll|enterAlways" />-->
+
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:id="@+id/rlUserHeader"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="7dp"-->
+        <!--android:layout_below="@+id/appBar"-->
+        <!--android:background="@android:color/white">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/ivBanner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--app:srcCompat="@drawable/ic_launcher" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/ivProfileImage"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_marginStart="30dp"-->
+            <!--android:layout_marginTop="80dp"-->
+            <!--app:srcCompat="@drawable/ic_launcher" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvUserName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/ivProfileImage"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_marginStart="30dp"-->
+            <!--android:layout_marginTop="6dp"-->
+            <!--android:text="user name"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvScreenName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignLeft="@+id/tvUserName"-->
+            <!--android:layout_alignStart="@+id/tvUserName"-->
+            <!--android:layout_alignTop="@+id/tvUserName"-->
+            <!--android:layout_marginTop="17dp"-->
+            <!--android:text="screen name"-->
+            <!--android:textSize="12sp"-->
+            <!--android:textColor="@android:color/darker_gray"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvDescription"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignLeft="@+id/tvScreenName"-->
+            <!--android:layout_alignStart="@+id/tvScreenName"-->
+            <!--android:layout_below="@+id/tvScreenName"-->
+            <!--android:layout_marginTop="7dp"-->
+            <!--android:layout_marginBottom="7dp"-->
+            <!--android:text="Description"-->
+            <!--android:textSize="12sp"-->
+            <!--android:autoLink="all"-->
+            <!--android:linksClickable="true"-->
+            <!--android:lineSpacingExtra="2sp"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvfollowing"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignLeft="@+id/tvDescription"-->
+            <!--android:layout_alignStart="@+id/tvDescription"-->
+            <!--android:layout_below="@+id/tvDescription"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:text="following"-->
+            <!--android:textSize="12sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvfollower"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignTop="@+id/tvfollowing"-->
+            <!--android:layout_marginLeft="21dp"-->
+            <!--android:layout_marginStart="21dp"-->
+            <!--android:layout_toEndOf="@+id/tvfollowing"-->
+            <!--android:layout_toRightOf="@+id/tvfollowing"-->
+            <!--android:text="followers"-->
+            <!--android:textSize="12sp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:id="@+id/flContainer"-->
+        <!--android:layout_below="@+id/rlUserHeader">-->
+
+    <!--</FrameLayout>-->
+
+<!--</RelativeLayout>-->
