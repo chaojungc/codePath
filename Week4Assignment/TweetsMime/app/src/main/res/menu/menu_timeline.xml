@@ -13,7 +13,8 @@
         android:id="@+id/miSearch"
         android:icon="@drawable/ic_search_black_24dp"
         app:showAsAction="ifRoom"
-        android:title="Search">
+        android:title="Search"
+        android:onClick="onSearchView">
     </item>
 
 </menu>

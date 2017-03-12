@@ -113,6 +113,37 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
         startActivity(i);
     }
 
+    public void onSearchView(MenuItem mi){
+        // launch the search view
+        Intent i = new Intent(this,SearchActivity.class);
+        startActivity(i);
+//        SearchView searchView = (SearchView) MenuItemCompat.getActionView(mi);
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//
+//                client.getSearchTweets(0, query, new AsyncHttpResponseHandler() {
+//                    @Override
+//                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+//                        Gson gson = new GsonBuilder().create();
+////                        loginUser = gson.fromJson(response,User.class);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+//
+//                    }
+//                });
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
+    }
+
 
     public class TweetsPagerAdapter extends FragmentPagerAdapter{
 

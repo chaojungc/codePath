@@ -7,18 +7,17 @@ import android.graphics.PorterDuff;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.codepath.apps.simpletweets.R;
 import com.codepath.apps.simpletweets.activities.DetailActivity;
 import com.codepath.apps.simpletweets.activities.ProfileActivity;
+import com.codepath.apps.simpletweets.activities.SearchActivity;
 import com.codepath.apps.simpletweets.models.Tweet;
 import com.codepath.apps.simpletweets.utils.PatternEditableBuilder;
 
@@ -173,8 +172,9 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                         new PatternEditableBuilder.SpannableClickedListener() {
                             @Override
                             public void onSpanClicked(String text) {
-                                Toast.makeText(getContext(), "Clicked hashtag: " + text,
-                                        Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(getContext(),SearchActivity.class);
+                                i.putExtra("query", text);
+                                getContext().startActivity(i);
 
                             }
                         }).into(tvBody);
@@ -238,14 +238,13 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         }
 
         TextView tvFavoriteCount = viewHolder.tvFavoriteCount;
-        Log.d("DEBUG-1234567",String.valueOf(tweet.getFavouritesCount()));
+
         if(tweet.getFavouritesCount() != 0){
             tvFavoriteCount.setText(String.valueOf(tweet.getFavouritesCount()));
         }
         else{
             tvFavoriteCount.setText("");
         }
-
 
     }
 

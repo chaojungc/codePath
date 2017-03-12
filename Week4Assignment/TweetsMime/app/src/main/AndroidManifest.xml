@@ -43,7 +43,8 @@
         <activity android:name=".activities.TimelineActivity" />
         <activity android:name=".activities.DetailActivity" />
         <activity android:name=".activities.ProfileActivity" />
-        <activity android:name=".activities.RelationActivity"></activity>
+        <activity android:name=".activities.RelationActivity" />
+        <activity android:name=".activities.SearchActivity"></activity>
     </application>
 
 </manifest>

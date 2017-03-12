@@ -2,7 +2,7 @@
 
 **TweetsMime** is an android app that allows a user to view home and mentions timelines, view user profiles with user timelines, as well as compose and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **6** hours spent in total
+Time spent: **16** hours spent in total
 
 ## User Stories
 
@@ -29,7 +29,7 @@ The following **optional** features are implemented:
 * [x] User can click on a tweet to be **taken to a "detail view"** of that tweet
  * [ ] User can take favorite (and unfavorite) or retweet actions on a tweet
 * [x] Improve the user interface and theme the app to feel twitter branded
-* [ ] User can **search for tweets matching a particular query** and see results
+* [x] User can **search for tweets matching a particular query** and see results
 * [x] Usernames and hashtags are styled and clickable within tweets [using clickable spans](http://guides.codepath.com/android/Working-with-the-TextView#creating-clickable-styled-spans)
 
 The following **bonus** features are implemented:
@@ -38,10 +38,6 @@ The following **bonus** features are implemented:
 * [ ] Leverages the [data binding support module](http://guides.codepath.com/android/Applying-Data-Binding-for-Views) to bind data into layout templates.
 * [x] On the profile screen, leverage the [CoordinatorLayout](http://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#responding-to-scroll-events) to [apply scrolling behavior](https://hackmd.io/s/SJyDOCgU) as the user scrolls through the profile timeline.
 * [ ] User can view their direct messages (or send new ones)
-
-The following **additional** features are implemented:
-
-* [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
