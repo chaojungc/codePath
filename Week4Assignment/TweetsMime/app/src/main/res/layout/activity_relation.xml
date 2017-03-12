@@ -24,7 +24,6 @@ tools:context="com.codepath.apps.simpletweets.activities.RelationActivity">
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/white"
             app:titleTextColor="#1da1f2"
-            app:layout_scrollFlags="scroll|enterAlways"
             android:title="" />
 
 
